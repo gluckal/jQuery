@@ -1,17 +1,9 @@
-$(document).ready(function(){
-    $("form").submit(function(event){
-        var valid_input = false;
-        var fruit = $('input[name="fruit"]');
-        var year = $('input[name="standing"]');
-
-        if(fruit.is(":checked")){
-            console.log("fruit");
-            valid_input = true;
-        }
-        else{
-            alert("You must pick a fruit!");
-            event.preventDefault();
-        }
-        return valid_input;
-    })
-})
+$('form').submit(function(onsubmit){
+    var fruit = $('input[name="fruit"]');
+    var standing = $('input[name="standing"]');
+    if ((fruit.is(":checked")) && (standing.is(":checked"))) {
+        return true;
+    }
+    alert("You must pick a fruit and a year!");
+    return false
+});
